@@ -1,6 +1,5 @@
 package com.cg.sprint1;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Theatre {
@@ -82,11 +81,14 @@ public class Theatre {
 		this.managerContact = managerContact;
 	}
 
-	/*
+
+	/**
+	 * @param movieName
+	 * @return Movie
 	 * searchMovie(String) method is used to search for a movie in a particular
 	 * theater.If the user requested movie is present in that theater then the
 	 * details of the movie will be shown to the user. It returns a movie type
-	 * object
+	 * object 
 	 */
 	public Movie searchMovie(String movieName) {
 		for (Movie m : movies) {

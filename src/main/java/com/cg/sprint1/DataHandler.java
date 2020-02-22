@@ -45,11 +45,11 @@ class DataHandler {
 	public static List<Theatre> getListOfTheatres(List<Movie> movies, List<Screen> listOfScreens) {
 		List<Theatre> listOfTheatres = new ArrayList<Theatre>();
 
-		listOfTheatres.add(new Theatre(2001, "PVR Cinemas", "Delhi", addMoviesToTheatre(movies, 2),
+		listOfTheatres.add(new Theatre(2001, "PVR", "Delhi", addMoviesToTheatre(movies, 2),
 				addScreenToTheatre(listOfScreens, 2001, 2), "Aditya Singh", "9876543210"));
-		listOfTheatres.add(new Theatre(2002, "Cinepolis Cinemas", "Noida", addMoviesToTheatre(movies, 4),
+		listOfTheatres.add(new Theatre(2002, "Cinepolis", "Noida", addMoviesToTheatre(movies, 4),
 				addScreenToTheatre(listOfScreens, 2002, 2), "Mohd. Ikram", "8876543210"));
-		listOfTheatres.add(new Theatre(2003, "INOX Cinemas", "Greater Noida", addMoviesToTheatre(movies, 7),
+		listOfTheatres.add(new Theatre(2003, "INOX", "Greater Noida", addMoviesToTheatre(movies, 7),
 				addScreenToTheatre(listOfScreens, 2003, 3), "Divyansh Singh", "7876543210"));
 		return listOfTheatres;
 	}
