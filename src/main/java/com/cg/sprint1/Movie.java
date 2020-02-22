@@ -1,6 +1,7 @@
 package com.cg.sprint1;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 
 public class Movie {
 	int movieId;
@@ -9,6 +10,52 @@ public class Movie {
 	private String movieDirector;
 	private int movieLength;
 	private String[] languages; 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(languages);
+		result = prime * result + ((movieDirector == null) ? 0 : movieDirector.hashCode());
+		result = prime * result + movieId;
+		result = prime * result + movieLength;
+		result = prime * result + ((movieName == null) ? 0 : movieName.hashCode());
+		result = prime * result + ((movieReleaseDate == null) ? 0 : movieReleaseDate.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Movie other = (Movie) obj;
+		if (!Arrays.equals(languages, other.languages))
+			return false;
+		if (movieDirector == null) {
+			if (other.movieDirector != null)
+				return false;
+		} else if (!movieDirector.equals(other.movieDirector))
+			return false;
+		if (movieId != other.movieId)
+			return false;
+		if (movieLength != other.movieLength)
+			return false;
+		if (movieName == null) {
+			if (other.movieName != null)
+				return false;
+		} else if (!movieName.equals(other.movieName))
+			return false;
+		if (movieReleaseDate == null) {
+			if (other.movieReleaseDate != null)
+				return false;
+		} else if (!movieReleaseDate.equals(other.movieReleaseDate))
+			return false;
+		return true;
+	}
+
 	private LocalDate movieReleaseDate;
 
 	//parameterized constructor for Movie class

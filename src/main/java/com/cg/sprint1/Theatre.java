@@ -25,6 +25,64 @@ public class Theatre {
 		this.managerContact = managerContact;
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((listOfScreens == null) ? 0 : listOfScreens.hashCode());
+		result = prime * result + ((managerContact == null) ? 0 : managerContact.hashCode());
+		result = prime * result + ((managerName == null) ? 0 : managerName.hashCode());
+		result = prime * result + ((movies == null) ? 0 : movies.hashCode());
+		result = prime * result + ((theaterCity == null) ? 0 : theaterCity.hashCode());
+		result = prime * result + theaterId;
+		result = prime * result + ((theaterName == null) ? 0 : theaterName.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Theatre other = (Theatre) obj;
+		if (listOfScreens == null) {
+			if (other.listOfScreens != null)
+				return false;
+		} else if (!listOfScreens.equals(other.listOfScreens))
+			return false;
+		if (managerContact == null) {
+			if (other.managerContact != null)
+				return false;
+		} else if (!managerContact.equals(other.managerContact))
+			return false;
+		if (managerName == null) {
+			if (other.managerName != null)
+				return false;
+		} else if (!managerName.equals(other.managerName))
+			return false;
+		if (movies == null) {
+			if (other.movies != null)
+				return false;
+		} else if (!movies.equals(other.movies))
+			return false;
+		if (theaterCity == null) {
+			if (other.theaterCity != null)
+				return false;
+		} else if (!theaterCity.equals(other.theaterCity))
+			return false;
+		if (theaterId != other.theaterId)
+			return false;
+		if (theaterName == null) {
+			if (other.theaterName != null)
+				return false;
+		} else if (!theaterName.equals(other.theaterName))
+			return false;
+		return true;
+	}
+
 	public int getTheaterId() {
 		return theaterId;
 	}

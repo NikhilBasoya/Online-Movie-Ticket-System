@@ -5,6 +5,55 @@ import java.util.List;
 
 public class Screen {
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + columns;
+		result = prime * result + ((movieEndDate == null) ? 0 : movieEndDate.hashCode());
+		result = prime * result + rows;
+		result = prime * result + screenId;
+		result = prime * result + ((screenName == null) ? 0 : screenName.hashCode());
+		result = prime * result + ((show == null) ? 0 : show.hashCode());
+		result = prime * result + theatreId;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Screen other = (Screen) obj;
+		if (columns != other.columns)
+			return false;
+		if (movieEndDate == null) {
+			if (other.movieEndDate != null)
+				return false;
+		} else if (!movieEndDate.equals(other.movieEndDate))
+			return false;
+		if (rows != other.rows)
+			return false;
+		if (screenId != other.screenId)
+			return false;
+		if (screenName == null) {
+			if (other.screenName != null)
+				return false;
+		} else if (!screenName.equals(other.screenName))
+			return false;
+		if (show == null) {
+			if (other.show != null)
+				return false;
+		} else if (!show.equals(other.show))
+			return false;
+		if (theatreId != other.theatreId)
+			return false;
+		return true;
+	}
+
 	private int screenId;
 	private int theatreId;
 	private String screenName;

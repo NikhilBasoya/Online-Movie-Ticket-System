@@ -5,7 +5,7 @@ import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
-class DataHandler {
+public class DataHandler {
 
 	private DataHandler() {
 		throw new IllegalStateException("Utility class");
