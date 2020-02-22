@@ -5,65 +5,25 @@ import java.util.List;
 
 public class Screen {
 
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + columns;
-		result = prime * result + ((movieEndDate == null) ? 0 : movieEndDate.hashCode());
-		result = prime * result + rows;
-		result = prime * result + screenId;
-		result = prime * result + ((screenName == null) ? 0 : screenName.hashCode());
-		result = prime * result + ((show == null) ? 0 : show.hashCode());
-		result = prime * result + theatreId;
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Screen other = (Screen) obj;
-		if (columns != other.columns)
-			return false;
-		if (movieEndDate == null) {
-			if (other.movieEndDate != null)
-				return false;
-		} else if (!movieEndDate.equals(other.movieEndDate))
-			return false;
-		if (rows != other.rows)
-			return false;
-		if (screenId != other.screenId)
-			return false;
-		if (screenName == null) {
-			if (other.screenName != null)
-				return false;
-		} else if (!screenName.equals(other.screenName))
-			return false;
-		if (show == null) {
-			if (other.show != null)
-				return false;
-		} else if (!show.equals(other.show))
-			return false;
-		if (theatreId != other.theatreId)
-			return false;
-		return true;
-	}
-
-	private int screenId;
-	private int theatreId;
+	private Integer screenId;
+	private Integer theatreId;
 	private String screenName;
 	private LocalDate movieEndDate; 
 	private List<Show> show;
-	private int rows;
-	private int columns;
+	private Integer rows;
+	private Integer columns;
 	
-	//parameterized constructor for Screen class
-	public Screen(int screenId, int theatreId, String screenName, LocalDate movieEndDate,List<Show> show, int rows, int columns) {
+	/**
+	 * @param screenId
+	 * @param theatreId
+	 * @param screenName
+	 * @param movieEndDate
+	 * @param show
+	 * @param rows
+	 * @param columns
+	 * parameterized constructor for Screen 
+	 */
+	public Screen(Integer screenId, Integer theatreId, String screenName, LocalDate movieEndDate,List<Show> show, Integer rows, Integer columns) {
 		super();
 		this.screenId = screenId;
 		this.theatreId = theatreId;
@@ -74,19 +34,19 @@ public class Screen {
 		this.columns = columns;
 	}
 	
-	public int getScreenId() {
+	public Integer getScreenId() {
 		return screenId;
 	}
 
-	public void setScreenId(int screenId) {
+	public void setScreenId(Integer screenId) {
 		this.screenId = screenId;
 	}
 
-	public int getTheatreId() {
+	public Integer getTheatreId() {
 		return theatreId;
 	}
 
-	public void setTheatreId(int theatreId) {
+	public void setTheatreId(Integer theatreId) {
 		this.theatreId = theatreId;
 	}
 
@@ -115,20 +75,72 @@ public class Screen {
 	}
 
 	
-	public int getRows() {
+	public Integer getRows() {
 		return rows;
 	}
 
-	public void setRows(int rows) {
+	public void setRows(Integer rows) {
 		this.rows = rows;
 	}
 
-	public int getColumns() {
+	public Integer getColumns() {
 		return columns;
 	}
 
-	public void setColumns(int columns) {
+	public void setColumns(Integer columns) {
 		this.columns = columns;
+	}
+	
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + columns;
+		result = prime * result + ((movieEndDate == null) ? 0 : movieEndDate.hashCode());
+		result = prime * result + rows;
+		result = prime * result + screenId;
+		result = prime * result + ((screenName == null) ? 0 : screenName.hashCode());
+		result = prime * result + ((show == null) ? 0 : show.hashCode());
+		result = prime * result + theatreId;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Screen other = (Screen) obj;
+		if (columns != other.columns)
+			return false;
+		if (movieEndDate == null) {
+			if (other.movieEndDate != null)
+				return false;
+		} 
+		else if (!movieEndDate.equals(other.movieEndDate))
+			return false;
+		if (rows != other.rows)
+			return false;
+		if (screenId != other.screenId)
+			return false;
+		if (screenName == null) {
+			if (other.screenName != null)
+				return false;
+		} 
+		else if (!screenName.equals(other.screenName))
+			return false;
+		if (show == null) {
+			if (other.show != null)
+				return false;
+		} 
+		else if (!show.equals(other.show))
+			return false;
+		if (theatreId != other.theatreId)
+			return false;
+		return true;
 	}
 
 }

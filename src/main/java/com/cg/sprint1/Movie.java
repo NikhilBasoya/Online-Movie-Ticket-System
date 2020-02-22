@@ -8,8 +8,78 @@ public class Movie {
 	
 	private String movieName;
 	private String movieDirector;
-	private int movieLength;
+	private Integer movieLength;
 	private String[] languages; 
+	private LocalDate movieReleaseDate;
+
+	/**
+	 * @param movieId
+	 * @param movieName
+	 * @param movieDirector
+	 * @param movieLength
+	 * @param languages
+	 * @param movieReleaseDate
+	 * parameterized constructor for Movie 
+	 */
+	public Movie(Integer movieId, String movieName, String movieDirector, int movieLength, String[] languages,
+			LocalDate movieReleaseDate) {
+		super();
+		this.movieId = movieId;
+		this.movieName = movieName;
+		this.movieDirector = movieDirector;
+		this.movieLength = movieLength;
+		this.languages = languages;
+		this.movieReleaseDate = movieReleaseDate;
+	}
+	
+	public Integer getMovieId() {
+		return movieId;
+	}
+
+	public void setMovieId(Integer movieId) {
+		this.movieId = movieId;
+	}
+
+	public String getMovieName() {
+		return movieName;
+	}
+
+	public void setMovieName(String movieName) {
+		this.movieName = movieName;
+	}
+
+	public String getMovieDirector() {
+		return movieDirector;
+	}
+
+	public void setMovieDirector(String movieDirector) {
+		this.movieDirector = movieDirector;
+	}
+
+	public Integer getMovieLength() {
+		return movieLength;
+	}
+
+	public void setMovieLength(Integer movieLength) {
+		this.movieLength = movieLength;
+	}
+
+	public String[] getLanguages() {
+		return languages;
+	}
+
+	public void setLanguages(String[] languages) {
+		this.languages = languages;
+	}
+
+	public LocalDate getMovieReleaseDate() {
+		return movieReleaseDate;
+	}
+
+	public void setMovieReleaseDate(LocalDate movieReleaseDate) {
+		this.movieReleaseDate = movieReleaseDate;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -37,7 +107,8 @@ public class Movie {
 		if (movieDirector == null) {
 			if (other.movieDirector != null)
 				return false;
-		} else if (!movieDirector.equals(other.movieDirector))
+		}
+		else if (!movieDirector.equals(other.movieDirector))
 			return false;
 		if (movieId != other.movieId)
 			return false;
@@ -46,76 +117,18 @@ public class Movie {
 		if (movieName == null) {
 			if (other.movieName != null)
 				return false;
-		} else if (!movieName.equals(other.movieName))
+		} 
+		else if (!movieName.equals(other.movieName))
 			return false;
 		if (movieReleaseDate == null) {
 			if (other.movieReleaseDate != null)
 				return false;
-		} else if (!movieReleaseDate.equals(other.movieReleaseDate))
+		}
+		else if (!movieReleaseDate.equals(other.movieReleaseDate))
 			return false;
 		return true;
 	}
 
-	private LocalDate movieReleaseDate;
-
-	//parameterized constructor for Movie class
-	public Movie(int movieId, String movieName, String movieDirector, int movieLength, String[] languages,
-			LocalDate movieReleaseDate) {
-		super();
-		this.movieId = movieId;
-		this.movieName = movieName;
-		this.movieDirector = movieDirector;
-		this.movieLength = movieLength;
-		this.languages = languages;
-		this.movieReleaseDate = movieReleaseDate;
-	}
 	
-	public int getMovieId() {
-		return movieId;
-	}
-
-	public void setMovieId(int movieId) {
-		this.movieId = movieId;
-	}
-
-	public String getMovieName() {
-		return movieName;
-	}
-
-	public void setMovieName(String movieName) {
-		this.movieName = movieName;
-	}
-
-	public String getMovieDirector() {
-		return movieDirector;
-	}
-
-	public void setMovieDirector(String movieDirector) {
-		this.movieDirector = movieDirector;
-	}
-
-	public int getMovieLength() {
-		return movieLength;
-	}
-
-	public void setMovieLength(int movieLength) {
-		this.movieLength = movieLength;
-	}
-
-	public String[] getLanguages() {
-		return languages;
-	}
-
-	public void setLanguages(String[] languages) {
-		this.languages = languages;
-	}
-
-	public LocalDate getMovieReleaseDate() {
-		return movieReleaseDate;
-	}
-
-	public void setMovieReleaseDate(LocalDate movieReleaseDate) {
-		this.movieReleaseDate = movieReleaseDate;
-	}
 	
 }

@@ -2,8 +2,9 @@ package com.cg.sprint1;
 
 import java.util.List;
 
+
 public class Theatre {
-	private int theaterId;
+	private Integer theaterId;
 
 	private String theaterName;
 	private String theaterCity;
@@ -11,9 +12,19 @@ public class Theatre {
 	private List<Screen> listOfScreens;
 	private String managerName;
 	private String managerContact;
-
-	// Parameterized constructor for Theatre class
-	public Theatre(int theaterId, String theaterName, String theaterCity, List<Movie> movies,
+   
+	
+	/**
+	 * @param theaterId
+	 * @param theaterName
+	 * @param theaterCity
+	 * @param movies
+	 * @param listOfScreens
+	 * @param managerName
+	 * @param managerContact
+	 * Parameterized constructor for Theatre
+	 */
+	public Theatre(Integer theaterId, String theaterName, String theaterCity, List<Movie> movies,
 			List<Screen> listOfScreens, String managerName, String managerContact) {
 		super();
 		this.theaterId = theaterId;
@@ -51,43 +62,49 @@ public class Theatre {
 		if (listOfScreens == null) {
 			if (other.listOfScreens != null)
 				return false;
-		} else if (!listOfScreens.equals(other.listOfScreens))
-			return false;
+		}
+		else if (!listOfScreens.equals(other.listOfScreens))
+				{return false;}
 		if (managerContact == null) {
 			if (other.managerContact != null)
 				return false;
-		} else if (!managerContact.equals(other.managerContact))
-			return false;
+		} 
+		else if (!managerContact.equals(other.managerContact))
+			{return false;}
 		if (managerName == null) {
 			if (other.managerName != null)
 				return false;
-		} else if (!managerName.equals(other.managerName))
+		} 
+		else if (!managerName.equals(other.managerName))
 			return false;
 		if (movies == null) {
 			if (other.movies != null)
 				return false;
-		} else if (!movies.equals(other.movies))
+		} 
+		else if (!movies.equals(other.movies))
 			return false;
 		if (theaterCity == null) {
 			if (other.theaterCity != null)
 				return false;
-		} else if (!theaterCity.equals(other.theaterCity))
+		} 
+		else if (!theaterCity.equals(other.theaterCity))
 			return false;
 		if (theaterId != other.theaterId)
 			return false;
 		if (theaterName == null) {
 			if (other.theaterName != null)
 				return false;
-		} else if (!theaterName.equals(other.theaterName))
+		} 
+		else if (!theaterName.equals(other.theaterName))
 			return false;
 		return true;
 	}
 
-	public int getTheaterId() {
+	public Integer getTheaterId() {
 		return theaterId;
 	}
 
-	public void setTheaterId(int theaterId) {
+	public void setTheaterId(Integer theaterId) {
 		this.theaterId = theaterId;
 	}
 
@@ -139,14 +156,12 @@ public class Theatre {
 		this.managerContact = managerContact;
 	}
 
-
 	/**
-	 * @param movieName
-	 * @return Movie
-	 * searchMovie(String) method is used to search for a movie in a particular
-	 * theater.If the user requested movie is present in that theater then the
-	 * details of the movie will be shown to the user. It returns a movie type
-	 * object 
+	 * @param String movieName
+	 * @return Movie 
+	 * Movie searchMovie(String) method is used to search for a movie in a
+	 * particular theater.If the user requested movie is present in that
+	 * theater then the details of the movie will be shown to the user.
 	 */
 	public Movie searchMovie(String movieName) {
 		for (Movie m : movies) {
@@ -166,10 +181,13 @@ public class Theatre {
 		return null;
 	}
 
-	/*
-	 * This method is used to search for a screen in a particular theater. If the
-	 * requested screen is present in the theater then the details of the screen
-	 * will be shown. It returns a Screen Type object
+	 
+	/**
+	 * @param String screenName
+	 * @return Screen
+	 *	This method is used to search for a screen in a particular theater. If the
+	  	requested screen is present in the theater then the details of the screen
+	  	will be shown.
 	 */
 	public Screen searchScreen(String screenName) {
 		for (Screen s : listOfScreens) {

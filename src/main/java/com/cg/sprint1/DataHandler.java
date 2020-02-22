@@ -7,10 +7,12 @@ import java.util.List;
 
 public class DataHandler {
 
-	private DataHandler() {
-		throw new IllegalStateException("Utility class");
-	}
+	
 
+	/**
+	 * @return List<Movie>
+	 * returns the list of movies.
+	 */
 	public static List<Movie> getMovies() {
 		List<Movie> movies = new ArrayList<Movie>();
 		String[] lang = { "Hindi", "English" };
@@ -28,6 +30,10 @@ public class DataHandler {
 		return movies;
 	}
 
+	/**
+	 * @return List<Screen>
+	 * returns the list of Screens.
+	 */
 	public static List<Screen> getListOfScreens() {
 		List<Screen> listOfScreens = new ArrayList<Screen>();
 		listOfScreens.add(new Screen(102001, 2001, "Screen1", LocalDate.parse("2019-09-30"), getShows(), 25, 20));
@@ -42,6 +48,12 @@ public class DataHandler {
 
 	}
 
+	/**
+	 * @param movies
+	 * @param listOfScreens
+	 * @return List<Theatre>
+	 * returns the list of theatres.
+	 */
 	public static List<Theatre> getListOfTheatres(List<Movie> movies, List<Screen> listOfScreens) {
 		List<Theatre> listOfTheatres = new ArrayList<Theatre>();
 
@@ -54,6 +66,12 @@ public class DataHandler {
 		return listOfTheatres;
 	}
 
+	/**
+	 * @param movies
+	 * @param n
+	 * @return Movie[*]
+	 * add movies to theatre
+	 */
 	public static List<Movie> addMoviesToTheatre(List<Movie> movies, int n) {
 		List<Movie> movie = new ArrayList<Movie>();
 		for (int i = 0; i < n; i++)
@@ -61,6 +79,13 @@ public class DataHandler {
 		return movie;
 	}
 
+	/**
+	 * @param listOfScreens
+	 * @param theatreId
+	 * @param n
+	 * @return Screen[*]
+	 * adds list of screens to a theatre
+	 */
 	public static List<Screen> addScreenToTheatre(List<Screen> listOfScreens, int theatreId, int n) {
 		List<Screen> screen = new ArrayList<Screen>();
 
@@ -73,6 +98,10 @@ public class DataHandler {
 
 	}
 
+	/**
+	 * @return Show[*]
+	 * returns the list of shows
+	 */
 	public static List<Show> getShows() {
 		List<Integer> seat = new ArrayList<Integer>();
 		seat.add(1);
