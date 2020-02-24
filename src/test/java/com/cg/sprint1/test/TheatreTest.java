@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.cg.sprint1.*;
+import com.cg.sprint1.beans.*;
+import com.cg.sprint1.dao.DataHandler;
+import com.cg.sprint1.services.Theatre;
 
 import org.junit.Test;
 
